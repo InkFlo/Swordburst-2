@@ -28,7 +28,8 @@ local client = players.LocalPlayer;
 local runService = game:GetService("RunService");
 local heartbeat = runService.heartbeat;
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/LegoHacks/Utilities/main/UI.lua"))();
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/InkFlo/Utilities/main/UI.lua"))();
+--local moderators = game:HttpGet("https://raw.githubusercontent.com/InkFlo/Swordburst-2/main/Moderators.txt"):split("\n");
 local moderators = game:HttpGet("https://raw.githubusercontent.com/LegoHacks/Swordburst-2/main/Moderators.txt"):split("\n");
 
 -- Main Script
@@ -440,7 +441,7 @@ local skillTab = library:CreateWindow("Skills");
 skillTab:AddList({
     text = "Chosen Skill";
     flag = "chosen_skill";
-    values = {"Summon Pistol", "Summon Tree", "Infinity Slash"};
+    values = {"Summon Tree", "Summon Pistol", "Infinity Slash"};
 });
 
 skillTab:AddButton({
