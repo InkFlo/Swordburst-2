@@ -360,26 +360,24 @@ autoFarmTab:AddList({
     values = mobs[game.PlaceId];
 });
 
-local miscTab = library:CreateWindow("Misc Cheats");
-
-miscTab:AddToggle({
+autoFarmTab:AddToggle({
     text = "Instant Trade";
     flag = "instant_trade";
 });
 
-miscTab:AddToggle({
+autoFarmTab:AddToggle({
     text = "WalkSpeed";
     flag = "walkspeed_enabled";
 });
 
-miscTab:AddSlider({
+autoFarmTab:AddSlider({
     text = "Speed";
     flag = "chosen_speed";
     min = 16;
     max = 80;
 });
 
-miscTab:AddButton({
+autoFarmTab:AddButton({
     text = "Go Invisible";
     callback = function()
         if (client.Character and client.Character:FindFirstChild("LowerTorso")) then
@@ -389,6 +387,36 @@ miscTab:AddButton({
         end;
     end;
 });
+
+--local miscTab = library:CreateWindow("Misc Cheats");
+
+--miscTab:AddToggle({
+--    text = "Instant Trade";
+--    flag = "instant_trade";
+--});
+--
+--miscTab:AddToggle({
+--    text = "WalkSpeed";
+--    flag = "walkspeed_enabled";
+--});
+--
+--miscTab:AddSlider({
+--    text = "Speed";
+--    flag = "chosen_speed";
+--    min = 16;
+--    max = 80;
+--});
+--
+--miscTab:AddButton({
+--    text = "Go Invisible";
+--    callback = function()
+--        if (client.Character and client.Character:FindFirstChild("LowerTorso")) then
+--            local root = client.character.LowerTorso.Root:Clone();
+--            client.character.LowerTorso.Root:Destroy();
+--            root.Parent = client.character.LowerTorso;
+--        end;
+--    end;
+--});
 
 local itemTab = library:CreateWindow("Items");
 
@@ -437,23 +465,23 @@ itemTab:AddButton({
     end;
 });
 
-local skillTab = library:CreateWindow("Skills");
-skillTab:AddList({
-    text = "Chosen Skill";
-    flag = "chosen_skill";
-    values = {"Summon Tree", "Summon Pistol", "Infinity Slash"};
-});
+--local skillTab = library:CreateWindow("Skills");
+--skillTab:AddList({
+--    text = "Chosen Skill";
+--    flag = "chosen_skill";
+--    values = {"Summon Tree", "Summon Pistol", "Infinity Slash"};
+--});
 
-skillTab:AddButton({
-    text = "Unlock Skill";
-    callback = function()
-        if (not replicatedStorage.Profiles[client.Name].Skills:FindFirstChild(library.flags.chosen_skill)) then
-            local Skill = Instance.new("StringValue");
-            Skill.Parent = replicatedStorage.Profiles[client.Name].Skills;
-            Skill.Name = library.flags.chosen_skill;
-        end;
-    end;
-});
+--skillTab:AddButton({
+--    text = "Unlock Skill";
+--    callback = function()
+--        if (not replicatedStorage.Profiles[client.Name].Skills:FindFirstChild(library.flags.chosen_skill)) then
+--            local Skill = Instance.new("StringValue");
+--            Skill.Parent = replicatedStorage.Profiles[client.Name].Skills;
+--            Skill.Name = library.flags.chosen_skill;
+--        end;
+--    end;
+--});
 
 heartbeat:Connect(function()
     if (client.Character and library.flags.autofarming) then
