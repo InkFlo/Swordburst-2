@@ -418,52 +418,52 @@ autoFarmTab:AddButton({
 --    end;
 --});
 
-local itemTab = library:CreateWindow("Items");
+--local itemTab = library:CreateWindow("Items");
 
-itemTab:AddList({
-    text = "Item";
-    flag = "chosen_item";
-    values = replicatedStorage.Profiles[client.Name].Inventory:GetChildren();
-});
-
-itemTab:AddButton({
-    text = "Dismantle";
-    callback = function()
-        replicatedStorage.Event:FireServer("Equipment", {"Dismantle", replicatedStorage.Profiles[client.Name].Inventory:FindFirstChild(library.flags.chosen_item)});
-    end;
-});
-
-itemTab:AddButton({
-    text = "Upgrade";
-    callback = function()
-        replicatedStorage.Event:FireServer("Equipment", {"Upgrade", replicatedStorage.Profiles[client.Name].Inventory:FindFirstChild(library.flags.chosen_item)});
-    end;
-});
-
-itemTab:AddSlider({
-    text = "Crystals";
-    flag = "chosen_crystals";
-    min = 1;
-    max = 100;
-});
-
-itemTab:AddButton({
-    text = "Rare Crystal";
-    callback = function()
-        for i = 1, library.flags.chosen_crystals do
-            crystalForge:Craft("Legendary Upgrade Crystal");
-        end;
-    end;
-});
-
-itemTab:AddButton({
-    text = "Legendary Crystal";
-    callback = function()
-        for i = 1, library.flags.chosen_crystals do
-            crystalForge:Craft("Legendary Upgrade Crystal");
-        end;
-    end;
-});
+--itemTab:AddList({
+--    text = "Item";
+--    flag = "chosen_item";
+--    values = replicatedStorage.Profiles[client.Name].Inventory:GetChildren();
+--});
+--
+--itemTab:AddButton({
+--    text = "Dismantle";
+--    callback = function()
+--        replicatedStorage.Event:FireServer("Equipment", {"Dismantle", replicatedStorage.Profiles[client.Name].Inventory:FindFirstChild(library.flags.chosen_item)});
+--    end;
+--});
+--
+--itemTab:AddButton({
+--    text = "Upgrade";
+--    callback = function()
+--        replicatedStorage.Event:FireServer("Equipment", {"Upgrade", replicatedStorage.Profiles[client.Name].Inventory:FindFirstChild(library.flags.chosen_item)});
+--    end;
+--});
+--
+--itemTab:AddSlider({
+--    text = "Crystals";
+--    flag = "chosen_crystals";
+--    min = 1;
+--    max = 100;
+--});
+--
+--itemTab:AddButton({
+--    text = "Rare Crystal";
+--    callback = function()
+--        for i = 1, library.flags.chosen_crystals do
+--            crystalForge:Craft("Legendary Upgrade Crystal");
+--        end;
+--    end;
+--});
+--
+--itemTab:AddButton({
+--    text = "Legendary Crystal";
+--    callback = function()
+--        for i = 1, library.flags.chosen_crystals do
+--            crystalForge:Craft("Legendary Upgrade Crystal");
+--        end;
+--    end;
+--});
 
 --local skillTab = library:CreateWindow("Skills");
 --skillTab:AddList({
